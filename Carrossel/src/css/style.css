@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(110deg, #778beb, #b3b5ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.carrossel {
+    position: relative;
+    max-width: 30%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carrossel__slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding-bottom: 50px;
+}
+
+.carrossel__slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    text-align: center;
+}
+
+.carrossel__slide h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.carrossel__slide p {
+    font-size: 16px;
+    color: #666;
+}
+
+.carrossel__botoes {
+    position: absolute;
+    width: 100%;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.carrossel__botoes button {
+    background-color: #778beb;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel__botoes button:hover {
+    background-color: #715abd;
+}
+
+.carrossel__botoes button:focus {
+    outline: none;
+}

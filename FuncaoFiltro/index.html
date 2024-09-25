@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Destinos de Viagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white p-6 text-center">
+        <h1 class="text-3xl font-bold">Filtrar destinos de viagem</h1>
+    </header>
+    <main class="container my-auto flex p-6">
+        <div class="w-1/4 pr-4">
+            <h2 class="text-2xl font-bold mb-4">Filtros</h2>
+            <form id="filterForm" class="mb-6">
+                <div class="mb-4">
+                    <label for="categoria" class="block text-sm font-medium text-gray-700">Categoria</label>
+                    <select id="categoria" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">Todas</option>
+                        <option value="praia">Praia</option>
+                        <option value="montanha">Montanha</option>
+                        <option value="rural">Rural</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="localidade" class="block text-sm font-medium text-gray-700">Localidade</label>
+                    <select id="localidade" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">Todos</option>
+                        <option value="nacional">Nacional</option>
+                        <option value="internacional">Internacional</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="popularidade" class="block text-sm font-medium text-gray-700">Popularidade</label>
+                    <select id="popularidade" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">Todos</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Média</option>
+                        <option value="baixa">Baixa</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="preco" class="block text-sm font-medium text-gray-700">Preço</label>
+                    <select id="preco" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">Todos</option>
+                        <option value="baixo">Baixo</option>
+                        <option value="medio">Médio</option>
+                        <option value="alto">Alto</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded w-full hover:bg-blue-700">Filtrar</button>
+            </form>
+        </div>
+        <div class="w-3/4">
+            <h2 class="text-2xl font-bold mb-4">Destinos disponíveis</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="destinos">
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="praia" data-preco="medio" data-localidade="nacional" data-popularidade="alta">
+                    <img src="./img/praiaPorDoSol.jpeg" alt="Praia" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Praia Por do Sol</h3>
+                        <p class="text-gray-600">A partir de: R$ 640</p>
+                        <p class="text-gray-600">Categoria: Praia</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="praia" data-preco="medio" data-localidade="nacional" data-popularidade="medio">
+                    <img src="./img/praiaDasPedras.jpeg" alt="Praia" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Praia das Pedras</h3>
+                        <p class="text-gray-600">A partir de: R$ 720</p>
+                        <p class="text-gray-600">Categoria: Praia</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="praia" data-preco="alto" data-localidade="internacional" data-popularidade="alta">
+                    <img src="./img/ilhaParaiso.jpeg" alt="Praia" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Ilha Paraíso</h3>
+                        <p class="text-gray-600">A partir de: R$ 1020</p>
+                        <p class="text-gray-600">Categoria: Praia</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="praia" data-preco="alto" data-localidade="internacional" data-popularidade="media">
+                    <img src="./img/praiaDeLaCosta.jpeg" alt="Praia" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Praia de La Costa</h3>
+                        <p class="text-gray-600">A partir de: R$ 1250</p>
+                        <p class="text-gray-600">Categoria: Praia</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="montanha" data-preco="baixo" data-localidade="nacional" data-popularidade="media">
+                    <img src="./img/montanhaVerde.jpeg" alt="Montanha" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Montanha Verde</h3>
+                        <p class="text-gray-600">A partir de: R$ 530</p>
+                        <p class="text-gray-600">Categoria: Montanha</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="montanha" data-preco="medio" data-localidade="internacional" data-popularidade="alta">
+                    <img src="./img/monteDoAmanha.jpeg" alt="Montanha" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Monte do Amanhã</h3>
+                        <p class="text-gray-600">A partir de: R$ 860</p>
+                        <p class="text-gray-600">Categoria: Montanha</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="montanha" data-preco="alto" data-localidade="internacional" data-popularidade="medio">
+                    <img src="./img/picoDasNuvens.jpeg" alt="Montanha" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Pico das Nuvens</h3>
+                        <p class="text-gray-600">A partir de: R$ 1800</p>
+                        <p class="text-gray-600">Categoria: Praia</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="rural" data-preco="baixo" data-localidade="nacional" data-popularidade="alta">
+                    <img src="./img/fazendaGirassol.jpeg" alt="Rural" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Fazenda Girassol</h3>
+                        <p class="text-gray-600">A partir de: R$ 490</p>
+                        <p class="text-gray-600">Categoria: Rural</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="rural" data-preco="medio" data-localidade="nacional" data-popularidade="baixa">
+                    <img src="./img/ranchoLirioBranco.jpeg" alt="Rural" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Rancho Lírio Branco</h3>
+                        <p class="text-gray-600">A partir de: R$ 820</p>
+                        <p class="text-gray-600">Categoria: Rural</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="rural" data-preco="baixo" data-localidade="nacional" data-popularidade="alta">
+                    <img src="./img/campoDasFlores.jpeg" alt="Rural" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Campo das Flores</h3>
+                        <p class="text-gray-600">A partir de: R$ 320</p>
+                        <p class="text-gray-600">Categoria: Rural</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden destino" data-categoria="rural" data-preco="alto" data-localidade="nacional" data-popularidade="alta">
+                    <img src="./img/fazendaDoAmanhecer.jpeg" alt="Rural" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Fazenda do Amanhecer</h3>
+                        <p class="text-gray-600">Preço: R$ 1095</p>
+                        <p class="text-gray-600">Categoria: Rural</p>
+                        <button class="mt-2 bg-blue-900 text-white px-3 py-1 rounded hover:bg-blue-700">Ver detalhes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="p-4 m-auto"></footer>
+    <script type="module" src="filtro.js"></script>
+</body>
+</html>
